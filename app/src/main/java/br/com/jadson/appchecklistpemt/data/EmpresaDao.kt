@@ -1,21 +1,17 @@
 package br.com.jadson.appchecklistpemt.data
 
 import androidx.room.*
-import br.com.jadson.appchecklistpemt.data.model.ConfiguracaoEmpresa
-import br.com.jadson.appchecklistpemt.data.model.Empresa
+import br.com.jadson.appchecklistpemt.data.local.entity.EmpresaEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EmpresaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEmpresa(empresa: Empresa)
+    suspend fun upsertEmpresa(empresa: EmpresaEntity)
 
-    @Query("SELECT * FROM empresas WHERE empresaId = :id")
-    fun getEmpresaById(id: String): Flow<Empresa?>
+    @Query("SELECT * FROM empresa LIMIT 1")
+    fun getEmpresa(): Flow<EmpresaEntity?>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertConfiguracao(config: ConfiguracaoEmpresa)
-
-    @Query("SELECT * FROM configuracoes_empresa WHERE empresaId = :empresaId")
-    fun getConfiguracaoByEmpresaId(empresaId: String): Flow<ConfiguracaoEmpresa?>
+    @Query("SELECT COUNT(*) FROM empresa")
+    suspend fun hasEmpresa(): Int
 }
