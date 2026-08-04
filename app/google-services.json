@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "308572152048",
+    "project_id": "app-checklist-pemt-a996f",
+    "storage_bucket": "app-checklist-pemt-a996f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308572152048:android:1385f034c0104f93212235",
+        "android_client_info": {
+          "package_name": "br.com.jadson.appchecklistpemt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308572152048-09sikpqk53c9bo0ci7h6adlam7v2nsd1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.jadson.appchecklistpemt",
+            "certificate_hash": "2fb4683fb3c23e89cf18a4402c9d21be78512a65"
+          }
+        },
+        {
+          "client_id": "308572152048-95d404pr70et4f2vd8j5nns0vplg1lrc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqAFMemZvCpPeAW9o3wwFeDqHzIMvqHy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308572152048-95d404pr70et4f2vd8j5nns0vplg1lrc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
