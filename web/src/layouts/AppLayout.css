@@ -1,0 +1,131 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  background: rgba(15, 23, 42, 0.98);
+  border-right: 1px solid rgba(148, 163, 184, 0.08);
+  padding: 28px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  transform: translateX(0);
+  transition: transform 0.25s ease;
+  z-index: 20;
+}
+
+.app-sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-brand span {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.sidebar-close {
+  display: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 14px;
+}
+
+.nav-link {
+  display: block;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.04);
+}
+
+.nav-link.active {
+  background: rgba(37, 99, 235, 0.18);
+  color: #eff6ff;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  background: rgba(15, 23, 42, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.hamburger {
+  display: none;
+  background: rgba(37, 99, 235, 0.16);
+  color: #eff6ff;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border: none;
+}
+
+.page-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.app-content {
+  padding: 24px;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    inset: 0 auto auto 0;
+    width: min(280px, 80vw);
+    transform: translateX(-120%);
+    height: 100vh;
+  }
+
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: inline-flex;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-content {
+    padding: 16px;
+  }
+}
